@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Start</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript">
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('time').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+}
+function checkTime(i)
+{
+if (i<10)
+{
+i="0" + i;
+}
+return i;
+}
+    </script>
+  </head>
+   <body onload="startTime()">
+    <div class="pageContainer">
+      <div class="vertAlign">
+            <div class="backgroundimage"></div>
+      <div class="boxContainer">
+      </div>
+      <div class="timebox" id="time">
+      </div>
+
+        <div class="search">
+          <form class="searchForm" method="GET" action="https://duckduckgo.com/?q=">
+            <input class="searchInput" type="text" name="q" autofocus>
+          </form>
+        </div>
+        <div class="boxContainer">
+          <div class="box">
+            <div class="boxHeader" id="boxHeader1">News</div>
+            <ul>
+              <li><a href="https://news.ycombinator.com">hacker news</a></li>
+              <li><a href="https://www.digg.com">digg</a></li>
+              <li><a href="https://0day.today">0day</a></li>
+              <li><a href="https://github.com/">Github</a></li>
+              <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
+            </ul>
+          </div>
+          <div class="box">
+            <div class="boxHeader" id="boxHeader2">Social</div>
+              <ul>
+              <li><a href="https://reddit.com/">/r/frontpage</a></li>
+              <li><a href="https://reddit.com/r/programming">/r/programming</a></li>
+              <li><a href="https://reddit.com/r/linux">/r/linux</a></li>
+              <li><a href="https://reddit.com/r/unixporn">/r/unixporn</a></li>
+              <li><a href="https://lainchan.jp">lainchan</a></li>
+              </ul>
+          </div>
+          <div class="box">
+            <div class="boxHeader" id="boxHeader3">Etc</div>
+              <ul>
+                <li><a href="https://notwhat.cd/">notwhat.cd</a></li>
+                <li><a href="https://laintracker.org/">laintracker</a></li>
+                <li><a href="https://glitched.xyz">glitched</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
